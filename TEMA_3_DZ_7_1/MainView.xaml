@@ -1,0 +1,49 @@
+﻿<Window x:Class="TEMA_3_DZ_7_1.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TEMA_3_DZ_7_1"
+             mc:Ignorable="d"                     
+             Height="300" 
+             Width="400"
+             Title="DZ_7_1 Создание листов"
+             Margin="5">
+    
+    <StackPanel>
+        <Label Content="Список семейств основной надписи"
+               Margin="5"/>
+        <ComboBox ItemsSource="{Binding TitleBlockList}"
+                  SelectedValue ="{Binding SelectedTitleBlock}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+
+        <UniformGrid Columns="2">
+            <Label Content="Количество листов"
+               Margin="5"/>
+            <TextBox Text="{Binding ListCounts}"
+                 Margin="5"/>
+        </UniformGrid>
+
+        <UniformGrid Columns="2">
+            <Label Content="Выберите вид на листе"
+               Margin="5"/>
+            <ComboBox ItemsSource="{Binding ViewList}"
+                  SelectedValue ="{Binding SelectedView}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        </UniformGrid>
+
+        <UniformGrid Columns="2">
+            <Label Content="Разработчик"
+               Margin="5"/>
+            <TextBox Text="{Binding Designer}"
+                 Margin="5"/>
+        </UniformGrid>
+
+        <Button Content="Создать листы"
+                Command="{Binding CreateCommand}"
+                Margin="5"/>
+
+    </StackPanel>
+</Window>
